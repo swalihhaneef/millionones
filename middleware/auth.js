@@ -9,7 +9,7 @@ const auth = asyncErrorHandler(async (req, res, next) => {
 
   const data = jwt.verify(token, process.env.TOKEN_SECRET);
 
-  req.user = data;
+  req.user = { _id: data.id, ...data };
 
   next();
 });

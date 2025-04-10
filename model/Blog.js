@@ -18,9 +18,10 @@ const schema = new Schema(
     written: String,
     name: String,
     content: String,
-    category: { type: Schema.Types.ObjectId },
-    addedBy: { type: Schema.Types.ObjectId },
-    updateBy: { type: Schema.Types.ObjectId },
+    category: { type: Schema.Types.ObjectId, ref: "blogCategory" },
+    image: String,
+    addedBy: { type: Schema.Types.ObjectId, ref: "user" },
+    updateBy: { type: Schema.Types.ObjectId, ref: "user" },
   },
   {
     timestamps: true,
