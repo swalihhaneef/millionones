@@ -11,6 +11,7 @@ import helmet from "helmet";
 import connectDB from "./database/index.js";
 import { PORT } from "./config.js";
 import { error } from "express-error-catcher";
+import cors from "cors";
 import "./helper/global.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -22,6 +23,7 @@ import routes from "./routes.js";
 
 const app = express();
 
+app.use(cors({ origin: ["http://localhost:3000"], credentials: true }));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

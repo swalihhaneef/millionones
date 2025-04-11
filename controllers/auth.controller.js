@@ -43,3 +43,16 @@ export const loginUser = asyncErrorHandler(async (req, res) => {
     200
   );
 });
+
+export const logoutUser = asyncErrorHandler(async (req, res) => {
+  try {
+    res.clearCookie("tkn", {
+      sameSite: "strict",
+    });
+
+    return new Response("Logout successful", null, 200);
+  } catch (error) {
+    console.error(error.message);
+    throw new Error("Unable to logout, please try again later", 400);
+  }
+});
