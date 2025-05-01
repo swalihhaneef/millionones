@@ -1,6 +1,7 @@
 import multer from "multer";
 import path from "path";
 import fs from "fs";
+import moment from "moment";
 
 const storage = (folder) =>
   multer.diskStorage({
@@ -32,4 +33,18 @@ export const multerUpload = (folder = "", filter, limits = null) => {
   if (!filter) filter = fileFilter;
 
   return multer({ storage: storage(folder), fileFilter: filter, limits });
+};
+
+export const currentDate = () => moment().format("YYYY-MM-DD");
+
+export const currentTime = () => moment().format("HH:mm:ss");
+
+export const generatePermalink = (str) => {
+  var code = str
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/[\s_-]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return code;
 };
