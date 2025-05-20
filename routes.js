@@ -8,6 +8,8 @@ import authRouter from "./routes/auth.router.js";
 
 import commonRouter from "./routes/common.router.js";
 
+import works from "./routes/works.router.js";
+
 router.use("/", indexRouter);
 
 router.use("/insight", insightRouter);
@@ -15,5 +17,7 @@ router.use("/insight", insightRouter);
 router.use("/auth", authRouter);
 
 router.use("/common", commonRouter);
+
+router.use("/works", works);
 
 export default router;

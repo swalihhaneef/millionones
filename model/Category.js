@@ -4,10 +4,11 @@ const schema = new Schema(
   {
     status: { type: Number, default: 0 },
     name: String,
+    order: Number,
   },
   {
     timestamps: true,
   }
 );
 
-export const BlogCategory = model("blogCategory", schema);
+export const Category = model("category", schema);

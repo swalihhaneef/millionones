@@ -3,6 +3,8 @@ import path from "path";
 import fs from "fs";
 import moment from "moment";
 
+import { Types } from "mongoose";
+
 const storage = (folder) =>
   multer.diskStorage({
     destination: function (req, file, cb) {
@@ -39,6 +41,20 @@ export const currentDate = () => moment().format("YYYY-MM-DD");
 
 export const currentTime = () => moment().format("HH:mm:ss");
 
+export const imageFileName = async (req, res) => {
+  try {
+    const data = req.file;
+    if (req.file) {
+      data.new_filename = data.destination.replace("public/", "") + "/" + data.filename;
+      res.status(200).json({ status: 200, data });
+    } else {
+      res.status(400).json("something went wrong");
+    }
+  } catch (error) {
+    res.status(400).json(error.message);
+  }
+};
+
 export const generatePermalink = (str) => {
   var code = str
     .toLowerCase()
@@ -48,3 +64,22 @@ export const generatePermalink = (str) => {
     .replace(/^-+|-+$/g, "");
   return code;
 };
+
+export function paginationParams(query) {
+  let { page = 1, limit = 20 } = query;
+
+  page = Number(page);
+  limit = Number(limit);
+
+  limit = limit > 100 ? 20 : limit;
+
+  const skip = (page - 1) * limit;
+
+  return { page, limit, skip };
+}
+
+export const uwantedFields = (obj = false) => (obj ? { createdAt: 0, updatedAt: 0, __v: 0 } : "-createdAt -updatedAt -__v");
+
+export function isValidObjectId(id) {
+  return Types.ObjectId.isValid(id) && new Types.ObjectId(id).toString() === id;
+}

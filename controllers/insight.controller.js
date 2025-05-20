@@ -1,7 +1,7 @@
 import { asyncErrorHandler, Error, Response } from "express-error-catcher";
 
 import model from "../model/index.js";
-import { currentDate, currentTime, generatePermalink } from "../helper/functions.js";
+import { currentDate, currentTime, generatePermalink, paginationParams } from "../helper/functions.js";
 
 export const create = asyncErrorHandler(async (req) => {
   const { name, content, type } = req.body;
@@ -60,10 +60,7 @@ export const deleteInsight = asyncErrorHandler(async (req) => {
 });
 
 export const listInsight = asyncErrorHandler(async (req) => {
-  let { page = 1, limit = 20 } = req.query;
-
-  page = Number(page);
-  let skip = (page - 1) * Number(limit);
+  const { skip, limit } = paginationParams(req.query);
 
   const data = await model.Insight.find({ status: 0 }).sort({ _id: -1 }).populate("addedBy", "name");
 
@@ -71,16 +68,11 @@ export const listInsight = asyncErrorHandler(async (req) => {
 });
 
 export const listDetailsWeb = asyncErrorHandler(async (req) => {
-  let { page = 1, limit = 20 } = req.query;
-
   const type = req.params.type;
 
   if (!["blog", "event", "news"].includes(type)) throw new Error("Invalid type");
 
-  page = Number(page);
-  limit = Number(limit);
-
-  let skip = (page - 1) * Number(limit);
+  const { skip, limit } = paginationParams(req.query);
 
   const count = await model.Insight.countDocuments({ status: 0, type });
 
