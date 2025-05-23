@@ -3,7 +3,10 @@ import { model, Schema } from "mongoose";
 const schema = new Schema(
   {
     status: { type: Number, default: 0 },
-    name: String,
+    type: { type: [String], enum: ["works", "service"] },
+    name: { type: String, required: true },
+    image: { type: String, required: true },
+    desc: String,
     order: Number,
   },
   {

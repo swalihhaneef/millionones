@@ -62,7 +62,7 @@ export const deleteInsight = asyncErrorHandler(async (req) => {
 export const listInsight = asyncErrorHandler(async (req) => {
   const { skip, limit } = paginationParams(req.query);
 
-  const data = await model.Insight.find({ status: 0 }).sort({ _id: -1 }).populate("addedBy", "name");
+  const data = await model.Insight.find({ status: 0 }).sort({ _id: -1 }).populate("addedBy", "name").sort({ _id: -1 });
 
   return new Response(null, { data }, 200);
 });
@@ -76,7 +76,12 @@ export const listDetailsWeb = asyncErrorHandler(async (req) => {
 
   const count = await model.Insight.countDocuments({ status: 0, type });
 
-  const data = await model.Insight.find({ status: 0, type }).sort({ _id: -1 }).skip(skip).limit(limit).select("name desc permalink image");
+  const data = await model.Insight.find({ status: 0, type })
+    .sort({ _id: -1 })
+    .skip(skip)
+    .limit(limit)
+    .select("name desc permalink image")
+    .sort({ _id: -1 });
 
   return new Response(null, { data, count }, 200);
 });

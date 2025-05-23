@@ -18,7 +18,7 @@ const schema = new Schema(
       },
     ],
     conclusion: String,
-    permalink: String,
+    slug: { type: String, required: true },
     addedBy: { type: Schema.Types.ObjectId, ref: "user" },
     updateBy: { type: Schema.Types.ObjectId, ref: "user" },
     date: { type: String, default: currentDate() },

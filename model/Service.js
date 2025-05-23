@@ -1,4 +1,5 @@
-import { model, Schema } from "mongoose";
+import { model, Schema, Types } from "mongoose";
+import { currentDate, currentTime } from "../helper/functions.js";
 
 const SubContentSchema = new Schema({
   title: String,
@@ -7,13 +8,14 @@ const SubContentSchema = new Schema({
 
 const Section2Schema = new Schema({
   title: String,
-  img: String,
+  image: String,
   content: String,
 });
 
 const schema = new Schema({
   name: { type: String, required: true },
   slug: { type: String, required: true },
+  status: { type: Number, default: 0 },
   sec1: {
     title: String,
     content: String,
@@ -41,6 +43,13 @@ const schema = new Schema({
       answer: String,
     },
   ],
+  category: { type: Types.ObjectId, required: true, ref: "category" },
+  addedBy: { type: Schema.Types.ObjectId, ref: "user" },
+  updateBy: { type: Schema.Types.ObjectId, ref: "user" },
+  date: { type: String, default: currentDate() },
+  time: { type: String, default: currentTime() },
+  upDate: String,
+  upTime: String,
 });
 
 export const Service = model("service", schema);

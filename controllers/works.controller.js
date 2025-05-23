@@ -1,6 +1,7 @@
 import { asyncErrorHandler, Error, Response } from "express-error-catcher";
 import model from "../model/index.js";
 import { currentDate, currentTime, generatePermalink, isValidObjectId, paginationParams, uwantedFields } from "../helper/functions.js";
+import { ALL_CATEGORY } from "../constants.js";
 
 export const create = asyncErrorHandler(async (req) => {
   const { title, heading, client, service, category, details, conclusion, img } = req.body;
@@ -9,9 +10,9 @@ export const create = asyncErrorHandler(async (req) => {
 
   if (isNull(img)) throw new Error("image is required");
 
-  const permalink = generatePermalink(heading);
+  const slug = generatePermalink(heading);
 
-  const exists = await model.Work.findOne({ $or: [{ title }, { permalink }] });
+  const exists = await model.Work.findOne({ $or: [{ title }, { slug }] });
 
   if (exists) throw new Error(`${exists.title} already exists`);
 
@@ -20,7 +21,7 @@ export const create = asyncErrorHandler(async (req) => {
     heading,
     details,
     conclusion,
-    permalink,
+    slug,
     img,
     client,
     service,
@@ -38,30 +39,34 @@ export const update = asyncErrorHandler(async (req) => {
 
   if (isNull(title)) throw new Error("title is required");
 
-  if (isNull(img)) throw new Error("title is required");
+  if (isNull(img)) throw new Error("image is required");
 
-  const permalink = generatePermalink(heading);
+  const slug = generatePermalink(heading);
 
-  const exists = await model.Work.findOne({ _id: { $ne: id }, $or: [{ title }, { permalink }] });
+  const exists = await model.Work.findOne({ _id: { $ne: id }, $or: [{ title }, { slug }] });
 
   if (exists) throw new Error(`${exists.title} already exists`);
 
-  const data = await model.Work.findByIdAndUpdate(id, {
-    $set: {
-      title,
-      heading,
-      details,
-      conclusion,
-      img,
-      client,
-      permalink,
-      service,
-      category,
-      updateBy: req.user._id,
-      upDate: currentDate(),
-      upTime: currentTime(),
+  const data = await model.Work.findByIdAndUpdate(
+    id,
+    {
+      $set: {
+        title,
+        heading,
+        details,
+        conclusion,
+        img,
+        client,
+        slug,
+        service,
+        category,
+        updateBy: req.user._id,
+        upDate: currentDate(),
+        upTime: currentTime(),
+      },
     },
-  });
+    { new: true }
+  );
 
   return new Response(`${data.title} updated successfully`, { data }, 200);
 });
@@ -73,7 +78,7 @@ export const list = asyncErrorHandler(async (req) => {
 
   const count = await model.Work.countDocuments(query);
 
-  const data = await model.Work.find(query).skip(skip).limit(limit).select(uwantedFields());
+  const data = await model.Work.find(query).skip(skip).limit(limit).select(uwantedFields()).sort({ _id: -1 });
 
   return new Response("success", { count, page, limit, data }, 200);
 });
@@ -81,24 +86,33 @@ export const list = asyncErrorHandler(async (req) => {
 export const webList = asyncErrorHandler(async (req) => {
   const { skip, limit, page } = paginationParams(req.query);
 
+  const { category } = req.query;
+
   const query = { status: 0 };
+
+  if (!isNull(category) && category !== ALL_CATEGORY) query.category = category;
 
   const count = await model.Work.countDocuments(query);
 
-  const data = await model.Work.find(query).skip(skip).limit(limit).select("title img category client").populate("category", "name");
+  const data = await model.Work.find(query)
+    .skip(skip)
+    .limit(limit)
+    .select("title img category client")
+    .populate("category", "name")
+    .sort({ _id: -1 });
 
   return new Response("success", { count, page, limit, data }, 200);
 });
 
-export const single = asyncErrorHandler(async (req) => {
+export const details = asyncErrorHandler(async (req) => {
   let id = req.params.id;
 
   let query = { status: 0 };
 
   if (isValidObjectId(id)) query._id = id;
-  else query.permalink = id;
+  else query.slug = id;
 
-  if (isNull(query._id) && isNull(query.permalink)) throw new Error("Please provide a id or permalink");
+  if (isNull(query._id) && isNull(query.slug)) throw new Error("Please provide a id or slug");
 
   const data = await model.Work.findOne(query).select(uwantedFields());
 
@@ -108,7 +122,7 @@ export const single = asyncErrorHandler(async (req) => {
 });
 
 export const deleteWork = asyncErrorHandler(async (req) => {
-  const data = await model.Work.updateOne({ _id: req.params.id }, { status: 1 });
+  await model.Work.updateOne({ _id: req.params.id }, { status: 1 });
 
   return new Response("Works deleted successfully", null, 200);
 });
