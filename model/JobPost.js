@@ -1,20 +1,16 @@
 import { model, Schema } from "mongoose";
-
-import moment from "moment";
 import { currentDate, currentTime } from "../helper/functions.js";
 
 const schema = new Schema(
   {
-    ip: String,
     status: { type: Number, default: 0 },
-    name: String,
-    desc: String,
-    content: String,
-    writer: String,
-    image: String,
-    type: { type: String, enum: ["blog", "event", "news"] },
-    readMin: Number,
-    permalink: { type: String },
+    title: { type: String, required: true },
+    desc: { type: String, required: true },
+    department: { type: String, required: true },
+    location: { type: String, required: true },
+    jobType: { type: String, enum: ["Full-time", "Part-time", "Contract"], default: "Full-time" },
+    requirements: [{ type: String, required: true }],
+    slug: String,
     addedBy: { type: Schema.Types.ObjectId, ref: "user" },
     updateBy: { type: Schema.Types.ObjectId, ref: "user" },
     date: { type: String, default: currentDate() },
@@ -27,5 +23,4 @@ const schema = new Schema(
   }
 );
 
-export default model("insight", schema);
-//  name, desc, content,writer,image,type,readMin, permalink
+export default model("jobPost", schema);

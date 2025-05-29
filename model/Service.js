@@ -52,4 +52,4 @@ const schema = new Schema({
   upTime: String,
 });
 
-export const Service = model("service", schema);
+export default model("service", schema);

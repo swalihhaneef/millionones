@@ -31,4 +31,4 @@ const schema = new Schema(
   }
 );
 
-export const Work = model("works", schema);
+export default model("works", schema);

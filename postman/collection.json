@@ -1,0 +1,993 @@
+{
+	"info": {
+		"_postman_id": "594de8ae-aed9-4263-9bd1-1dafe370cc5c",
+		"name": "horatio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24338350"
+	},
+	"item": [
+		{
+			"name": "insight",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "readMin",
+									"value": "{{$randomInt}}",
+									"type": "text"
+								},
+								{
+									"key": "writer",
+									"value": "{{$randomNamePrefix}}",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "{{$randomStreetName}}",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "{{$randomWords}}",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "postman-cloud:///1eec3682-1878-4a10-909a-11fefa80bf18"
+								},
+								{
+									"key": "type",
+									"value": "blog",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/insight",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"insight"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/insight/details/muhammed-thaha-kp-1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"insight",
+								"details",
+								"muhammed-thaha-kp-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "readMin",
+									"value": "{{$randomInt}}",
+									"type": "text"
+								},
+								{
+									"key": "writer",
+									"value": "{{$randomNamePrefix}}",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "{{$randomStreetName}}",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "{{$randomWords}}",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "postman-cloud:///1eec3682-1878-4a10-909a-11fefa80bf18"
+								},
+								{
+									"key": "type",
+									"value": "blog",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/insight",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"insight"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "common",
+			"item": [
+				{
+					"name": "image upload",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1eec3682-1878-4a10-909a-11fefa80bf18"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/common/image/:folder-name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"common",
+								"image",
+								":folder-name"
+							],
+							"variable": [
+								{
+									"key": "folder-name",
+									"value": "blogs"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/common/category?type=service",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"common",
+								"category"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "service",
+									"description": "service and work"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "works",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Social Media Dashboard\",\r\n    \"heading\": \"Two-Week Campaign Drives Nearly Half a Million Ad Views and High-Intent Investor Leads for Dar Global\",\r\n    \"details\": [\r\n        {\r\n            \"title\": \"Project Overview\",\r\n            \"desc\": \"Dar Global, the international arm of Dar Al Arkan, is a luxury real estate developer crafting exclusive residences in iconic locations across Europe and the Middle East. Specialising in high-end properties, the brand partners with world-renowned names to create investment opportunities for discerning buyers. While Dar Global had a strong market presence in the luxury market, it needed a refined strategy to attract high-net-worth investors actively seeking premium real estate. To achieve this, the brand collaborated with créo to implement a performance-driven lead generation campaign, ensuring its properties reached a qualified audience while achieving nearly half a million ad views, driving thousands of investor engagements, and securing a significant number of qualified high-intent leads.\",\r\n            \"img\": \"image-1\"\r\n        },\r\n        {\r\n            \"title\": \"title 2\",\r\n            \"desc\": \"desc two\"\r\n        }\r\n    ],\r\n    \"conclusion\": \"Dar Global’s digital transformation wasn’t just about reaching more people, it was about reaching the right people.\",\r\n    \"img\": \"image-link\",\r\n    \"client\": \"Horatio\",\r\n    \"service\": \"Performance Marketing\",\r\n    \"category\": \"67f69930a1acc8aa653de441\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/works",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"works"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"682c9782e5bf3934b32e8bb0\",\r\n    \"title\": \"Social Media Dashboard\",\r\n    \"heading\": \"Two-Week Campaign Drives\",\r\n    \"details\": [\r\n        {\r\n            \"title\": \"Project Overview\",\r\n            \"desc\": \"Dar Global, the international arm of Dar Al Arkan, is a luxury real estate developer crafting exclusive residences in iconic locations across Europe and the Middle East. Specialising in high-end properties, the brand partners with world-renowned names to create investment opportunities for discerning buyers. While Dar Global had a strong market presence in the luxury market, it needed a refined strategy to attract high-net-worth investors actively seeking premium real estate. To achieve this, the brand collaborated with créo to implement a performance-driven lead generation campaign, ensuring its properties reached a qualified audience while achieving nearly half a million ad views, driving thousands of investor engagements, and securing a significant number of qualified high-intent leads.\",\r\n            \"img\": \"image-1\"\r\n        },\r\n        {\r\n            \"title\": \"title 2\",\r\n            \"desc\": \"desc two\"\r\n        }\r\n    ],\r\n    \"conclusion\": \"Dar Global’s digital transformation wasn’t just about reaching more people, it was about reaching the right people.\",\r\n    \"img\": \"image-link\",\r\n    \"client\": \"Horatio\",\r\n    \"service\": \"Performance Marketing\",\r\n    \"category\": \"67f69930a1acc8aa653de441\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/works",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"works"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/works?page=1&limit=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"works"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/works/single/two-week-campaign-drives",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"works",
+								"single",
+								"two-week-campaign-drives"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/works/682c9c01d536c8fd613356d2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"works",
+								"682c9c01d536c8fd613356d2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "web list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/works/web",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"works",
+								"web"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Corporate Branding Packages\",\r\n    \"category\": \"67f69930a1acc8aa653de444\",\r\n    \"sec1\": {\r\n        \"title\": \"Best Branding Package Solutions for Your Business\",\r\n        \"content\": \"An all-inclusive branding package is essential for building brand identity. As the best branding agency in Kerala, we offer a comprehensive branding package that is capable of building trust and is the cornerstone of marketing efforts.\"\r\n    },\r\n    \"sec3\": {\r\n        \"title\": \"Corporate Branding & Identity Solutions For Your Business\",\r\n        \"content\": \"We have all heard that the first impression always determines the long-term connection. When it comes to the branding package, branding elements like logos, graphic elements, visiting cards, etc. will come under this first impression. If it is done well, it will attract your potential audience and later become your loyal customer. At Horatio, we offer your business the best corporate branding and identity solutions.\"\r\n    },\r\n    \"sec4\": {\r\n        \"title\": \"HOW OUR CORPORATE BRANDING PACKAGE HELP YOU\",\r\n        \"contents\": [\r\n            {\r\n                \"title\": \"Logo\",\r\n                \"content\": \"Your logo is the foundation of your brand identity. At HoratioHoraatio, we design logos that are simple, memorable, and meaningful. Each logo we create is versatile, ensuring it works across digital platforms, print materials, and merchandise. We consider your brand values, target audience, and industry trends to shape a logo that builds trust and leaves a lasting impression. It's not just a mark—it’s your brand’s signature.\"\r\n            },\r\n            {\r\n                \"title\": \"Colour\",\r\n                \"content\": \"Colours express more than aesthetics—they communicate emotion and personality. We create a colour palette that aligns with your brand identity and effectively conveys your values. Our selection of primary and secondary colours ensures consistency across all branding materials. Whether bold and energetic or subtle and professional, the palette reflects your unique tone and helps build brand recognition and emotional connection.\"\r\n            },\r\n            {\r\n                \"title\": \"Typography\",\r\n                \"content\": \"Typography is your brand’s voice in written form. We select fonts that match your brand personality—modern, classic, or bold. From headlines to body text, every font is chosen for readability and impact. Consistent typography strengthens your brand’s professionalism and visual coherence, adding rhythm and confidence to your messaging.\"\r\n            },\r\n            {\r\n                \"title\": \"Graphic Elements\",\r\n                \"content\": \"Graphic elements like icons, patterns, and shapes add personality and depth to your brand identity. We design these elements to complement your logo and unify your visual style. They ensure consistency across your marketing materials, presentations, and website—making your brand visually rich, creative, and instantly recognizable.\"\r\n            },\r\n            {\r\n                \"title\": \"Visiting Card\",\r\n                \"content\": \"A visiting card is a pocket-sized brand statement. We design sleek, stylish cards aligned with your brand—featuring your logo, brand colours, and contact details in a clear, professional layout. The result is a card that makes a strong first impression and tells your brand story at a glance.\"\r\n            },\r\n            {\r\n                \"title\": \"Envelopes\",\r\n                \"content\": \"Your envelope design adds a professional touch to your communication. We design clean, branded envelopes that feature your logo and colour scheme. Whether for official correspondence or marketing, a well-designed envelope creates a positive impression before it’s even opened—reflecting attention to detail and brand consistency.\"\r\n            },\r\n            {\r\n                \"title\": \"Letterhead\",\r\n                \"content\": \"A well-designed letterhead enhances your professionalism. We create clean, minimal layouts featuring your logo, brand colours, and contact details—ideal for print or digital use. Consistent letterheads add polish to your business communication and show your dedication to branding.\"\r\n            },\r\n            {\r\n                \"title\": \"Name Board\",\r\n                \"content\": \"A name board is your brand’s physical presence. We design bold, readable signage that captures attention and aligns with your brand identity. Whether for storefronts or office spaces, we ensure visibility, readability, and design coherence to reinforce your brand in the real world.\"\r\n            },\r\n            {\r\n                \"title\": \"ID Card\",\r\n                \"content\": \"ID cards are an extension of your internal branding. We design professional, easy-to-carry cards that feature your logo, brand colours, and employee information in a standard, clear layout. From staff to visitors, these cards reflect your brand’s attention to detail and professionalism.\"\r\n            },\r\n            {\r\n                \"title\": \"Website Design Idea\",\r\n                \"content\": \"Your website is your brand’s digital home. As part of our branding package, we provide a custom homepage concept that reflects your brand’s visual identity. This includes layout, colour, typography, and user flow suggestions. Designed to be responsive and conversion-friendly, it’s the starting point for impactful web presence.\"\r\n            }\r\n        ]\r\n    },\r\n    \"sec5\": {\r\n        \"title\": \"Why We Are The Best Branding Agency In Kerala\",\r\n        \"content\": [\r\n            {\r\n                \"title\": \"Customized Approach\",\r\n                \"content\": \"We do not follow a one-size-fits-all approach, so we always approach our customers in a personalised manner. We create branding packages that meet our customers' specific needs and goals. Our expert team will dive deep into the brand's essence, understanding the vision, competitors, market position, and long-term goals to provide a perfect branding solution.\"\r\n            },\r\n            {\r\n                \"title\": \"Interactive Workflow\",\r\n                \"content\": \"We always look for a collaborative process with our clients to deliver what they exactly looking for. Our team-based approach includes listening to their specific requests, upgrading, and ensuring that the branding identity we created will match their vision.\"\r\n            },\r\n            {\r\n                \"title\": \"Expert Team\",\r\n                \"content\": \"Our expert team have years of experience in design, strategy, and vision to build what you are looking for. We create a brand identity that is unique and capable of connecting with your audience, generating emotions, building trust, and leaving a lasting impression on your customers. Our team is well-versed in building branding, including logo design, brand messaging, and visual elements.\"\r\n            },\r\n            {\r\n                \"title\": \"Comprehensive Branding\",\r\n                \"content\": \"We manage every element of branding, from building strategy to design to messaging, to ensure your identity is as strong as it can be. We prioritize consistency and unity across all touchpoints, including logo design, brand messaging, and visual elements. Our comprehensive branding services include business cards, letterheads, packaging, envelopes, display materials, and signage.\"\r\n            },\r\n            {\r\n                \"title\": \"AI-powered Branding Solutions\",\r\n                \"content\": \"At Horatio, we offer AI-powered branding solutions & visual identity solutions to revolutionize branding and visual identity, offering tools that organize the process, generate ideas, and ensure brand consistency across various platforms. AI utilizes algorithms to create logos, colour schemes, and other brand assets, making it easier for businesses to establish a strong visual identity.\"\r\n            },\r\n            {\r\n                \"title\": \"Consistency in Branding\",\r\n                \"content\": \"Maintaining consistent branding across all platforms means ensuring a unified brand experience and message, from visual elements to tone of voice, across all platforms, fostering trust and recognition. It will help the customers to recognize your brand and choose you from your competitors.\"\r\n            }\r\n        ]\r\n    },\r\n    \"sec6\": {\r\n        \"title\": \"Get a Free Brand Consultation!\",\r\n        \"content\": \"A comprehensive branding package is essential for establishing a unique and memorable brand identity. Investing in a well-crafted full branding package enhances brand recognition and builds trust with your audience, setting the foundation for successful marketing efforts. If you are looking for a branding package provider in Kerala in a highly cost-effective manner, we are the one you can rely on.\"\r\n    },\r\n    \"faq\": [\r\n        {\r\n            \"question\": \"How does Horatio ensure consistency in brand messaging across all marketing channels?\",\r\n            \"answer\": \"Horatio ensures consistency in brand messaging across all marketing channels by establishing clear brand guidelines, maintaining a unified content strategy, and connecting messaging across platforms. Through strong internal communication, content approval processes, and data-driven refinements, Horatio ensures that every touchpoint—whether social media, email, website, or offline campaigns—delivers a unified and impactful brand experience.\"\r\n        },\r\n        {\r\n            \"question\": \"What will be included in Horatio's branding package?\",\r\n            \"answer\": \"Horatio's branding package will include a Logo, Colour, Typography, Graphic Elements, Visiting Card, Envelopes, Letterhead, Name Board, Id Card, and Website Design Idea.\"\r\n        },\r\n        {\r\n            \"question\": \"Why is a branding package important for my business?\",\r\n            \"answer\": \"A branding package ensures consistency across all marketing channels, builds brand recognition, and helps establish trust with your audience. With a well-defined brand identity, your business can stand out from competitors, create a lasting impression, and drive customer loyalty.\"\r\n        },\r\n        {\r\n            \"question\": \"How does Horatio customize branding packages for different businesses?\",\r\n            \"answer\": \"Horatio creates branding packages by understanding each business's unique vision, target audience, and industry trends. Through in-depth research and collaboration, they craft a brand identity that aligns with the company's goals, ensuring a distinctive and impactful presence in the market.\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/service",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"68308e179983a22bb801a8aa\",\r\n    \"name\": \"Corporate Branding Packages\",\r\n    \"category\": \"67f69930a1acc8aa653de444\",\r\n    \"sec1\": {\r\n        \"title\": \"Best Branding Package Solutions for Your Business\",\r\n        \"content\": \"An all-inclusive branding package is essential for building brand identity. As the best branding agency in Kerala, we offer a comprehensive branding package that is capable of building trust and is the cornerstone of marketing efforts.\"\r\n    },\r\n    \"sec3\": {\r\n        \"title\": \"Corporate Branding & Identity Solutions For Your Business\",\r\n        \"content\": \"We have all heard that the first impression always determines the long-term connection. When it comes to the branding package, branding elements like logos, graphic elements, visiting cards, etc. will come under this first impression. If it is done well, it will attract your potential audience and later become your loyal customer. At Horatio, we offer your business the best corporate branding and identity solutions.\"\r\n    },\r\n    \"sec4\": {\r\n        \"title\": \"HOW OUR CORPORATE BRANDING PACKAGE HELP YOU\",\r\n        \"contents\": [\r\n            {\r\n                \"title\": \"Logo\",\r\n                \"content\": \"Your logo is the foundation of your brand identity. At HoratioHoraatio, we design logos that are simple, memorable, and meaningful. Each logo we create is versatile, ensuring it works across digital platforms, print materials, and merchandise. We consider your brand values, target audience, and industry trends to shape a logo that builds trust and leaves a lasting impression. It's not just a mark—it’s your brand’s signature.\"\r\n            },\r\n            {\r\n                \"title\": \"Colour\",\r\n                \"content\": \"Colours express more than aesthetics—they communicate emotion and personality. We create a colour palette that aligns with your brand identity and effectively conveys your values. Our selection of primary and secondary colours ensures consistency across all branding materials. Whether bold and energetic or subtle and professional, the palette reflects your unique tone and helps build brand recognition and emotional connection.\"\r\n            },\r\n            {\r\n                \"title\": \"Typography\",\r\n                \"content\": \"Typography is your brand’s voice in written form. We select fonts that match your brand personality—modern, classic, or bold. From headlines to body text, every font is chosen for readability and impact. Consistent typography strengthens your brand’s professionalism and visual coherence, adding rhythm and confidence to your messaging.\"\r\n            },\r\n            {\r\n                \"title\": \"Graphic Elements\",\r\n                \"content\": \"Graphic elements like icons, patterns, and shapes add personality and depth to your brand identity. We design these elements to complement your logo and unify your visual style. They ensure consistency across your marketing materials, presentations, and website—making your brand visually rich, creative, and instantly recognizable.\"\r\n            },\r\n            {\r\n                \"title\": \"Visiting Card\",\r\n                \"content\": \"A visiting card is a pocket-sized brand statement. We design sleek, stylish cards aligned with your brand—featuring your logo, brand colours, and contact details in a clear, professional layout. The result is a card that makes a strong first impression and tells your brand story at a glance.\"\r\n            },\r\n            {\r\n                \"title\": \"Envelopes\",\r\n                \"content\": \"Your envelope design adds a professional touch to your communication. We design clean, branded envelopes that feature your logo and colour scheme. Whether for official correspondence or marketing, a well-designed envelope creates a positive impression before it’s even opened—reflecting attention to detail and brand consistency.\"\r\n            },\r\n            {\r\n                \"title\": \"Letterhead\",\r\n                \"content\": \"A well-designed letterhead enhances your professionalism. We create clean, minimal layouts featuring your logo, brand colours, and contact details—ideal for print or digital use. Consistent letterheads add polish to your business communication and show your dedication to branding.\"\r\n            },\r\n            {\r\n                \"title\": \"Name Board\",\r\n                \"content\": \"A name board is your brand’s physical presence. We design bold, readable signage that captures attention and aligns with your brand identity. Whether for storefronts or office spaces, we ensure visibility, readability, and design coherence to reinforce your brand in the real world.\"\r\n            },\r\n            {\r\n                \"title\": \"ID Card\",\r\n                \"content\": \"ID cards are an extension of your internal branding. We design professional, easy-to-carry cards that feature your logo, brand colours, and employee information in a standard, clear layout. From staff to visitors, these cards reflect your brand’s attention to detail and professionalism.\"\r\n            },\r\n            {\r\n                \"title\": \"Website Design Idea\",\r\n                \"content\": \"Your website is your brand’s digital home. As part of our branding package, we provide a custom homepage concept that reflects your brand’s visual identity. This includes layout, colour, typography, and user flow suggestions. Designed to be responsive and conversion-friendly, it’s the starting point for impactful web presence.\"\r\n            }\r\n        ]\r\n    },\r\n    \"sec5\": {\r\n        \"title\": \"Why We Are The Best Branding Agency In Kerala\",\r\n        \"content\": [\r\n            {\r\n                \"title\": \"Customized Approach\",\r\n                \"content\": \"We do not follow a one-size-fits-all approach, so we always approach our customers in a personalised manner. We create branding packages that meet our customers' specific needs and goals. Our expert team will dive deep into the brand's essence, understanding the vision, competitors, market position, and long-term goals to provide a perfect branding solution.\"\r\n            },\r\n            {\r\n                \"title\": \"Interactive Workflow\",\r\n                \"content\": \"We always look for a collaborative process with our clients to deliver what they exactly looking for. Our team-based approach includes listening to their specific requests, upgrading, and ensuring that the branding identity we created will match their vision.\"\r\n            },\r\n            {\r\n                \"title\": \"Expert Team\",\r\n                \"content\": \"Our expert team have years of experience in design, strategy, and vision to build what you are looking for. We create a brand identity that is unique and capable of connecting with your audience, generating emotions, building trust, and leaving a lasting impression on your customers. Our team is well-versed in building branding, including logo design, brand messaging, and visual elements.\"\r\n            },\r\n            {\r\n                \"title\": \"Comprehensive Branding\",\r\n                \"content\": \"We manage every element of branding, from building strategy to design to messaging, to ensure your identity is as strong as it can be. We prioritize consistency and unity across all touchpoints, including logo design, brand messaging, and visual elements. Our comprehensive branding services include business cards, letterheads, packaging, envelopes, display materials, and signage.\"\r\n            },\r\n            {\r\n                \"title\": \"AI-powered Branding Solutions\",\r\n                \"content\": \"At Horatio, we offer AI-powered branding solutions & visual identity solutions to revolutionize branding and visual identity, offering tools that organize the process, generate ideas, and ensure brand consistency across various platforms. AI utilizes algorithms to create logos, colour schemes, and other brand assets, making it easier for businesses to establish a strong visual identity.\"\r\n            },\r\n            {\r\n                \"title\": \"Consistency in Branding\",\r\n                \"content\": \"Maintaining consistent branding across all platforms means ensuring a unified brand experience and message, from visual elements to tone of voice, across all platforms, fostering trust and recognition. It will help the customers to recognize your brand and choose you from your competitors.\"\r\n            }\r\n        ]\r\n    },\r\n    \"sec6\": {\r\n        \"title\": \"Get a Free Brand Consultation!\",\r\n        \"content\": \"A comprehensive branding package is essential for establishing a unique and memorable brand identity. Investing in a well-crafted full branding package enhances brand recognition and builds trust with your audience, setting the foundation for successful marketing efforts. If you are looking for a branding package provider in Kerala in a highly cost-effective manner, we are the one you can rely on.\"\r\n    },\r\n    \"faq\": [\r\n        {\r\n            \"question\": \"How does Horatio ensure consistency in brand messaging across all marketing channels?\",\r\n            \"answer\": \"Horatio ensures consistency in brand messaging across all marketing channels by establishing clear brand guidelines, maintaining a unified content strategy, and connecting messaging across platforms. Through strong internal communication, content approval processes, and data-driven refinements, Horatio ensures that every touchpoint—whether social media, email, website, or offline campaigns—delivers a unified and impactful brand experience.\"\r\n        },\r\n        {\r\n            \"question\": \"What will be included in Horatio's branding package?\",\r\n            \"answer\": \"Horatio's branding package will include a Logo, Colour, Typography, Graphic Elements, Visiting Card, Envelopes, Letterhead, Name Board, Id Card, and Website Design Idea.\"\r\n        },\r\n        {\r\n            \"question\": \"Why is a branding package important for my business?\",\r\n            \"answer\": \"A branding package ensures consistency across all marketing channels, builds brand recognition, and helps establish trust with your audience. With a well-defined brand identity, your business can stand out from competitors, create a lasting impression, and drive customer loyalty.\"\r\n        },\r\n        {\r\n            \"question\": \"How does Horatio customize branding packages for different businesses?\",\r\n            \"answer\": \"Horatio creates branding packages by understanding each business's unique vision, target audience, and industry trends. Through in-depth research and collaboration, they craft a brand identity that aligns with the company's goals, ensuring a distinctive and impactful presence in the market.\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/service",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/service",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single - details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/service/single/search-engine-optimization-services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"service",
+								"single",
+								"search-engine-optimization-services"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contact",
+			"item": [
+				{
+					"name": "add - web",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"mobile\": \"{{$randomPhoneNumber}}\",\r\n    \"remarks\": \"{{$randomLoremSentence}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/contact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/contact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"contact"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "job-post",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Senior Full Stack Developer\",\r\n    \"desc\": \"Join our core team to build next-generation cloud solutions. You'll be working on cutting-edge technologies and helping shape the future of our platform.\",\r\n    \"department\": \"Engineering\",\r\n    \"location\": \"Remote / San Francisco\",\r\n    \"jobType\": \"Full-time\",\r\n    \"requirements\": [\r\n        \"5+ years experience in full-stack development\",\r\n        \"Expert knowledge of React, Node.js, and modern JavaScript\",\r\n        \"Experience with cloud services (AWS/GCP/Azure)\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/job-post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"job-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"683871c52adeff90ca813498\",\r\n    \"title\": \"AI Research Scientist\",\r\n    \"desc\": \"Shape the future of AI and machine learning applications. Work on groundbreaking research projects and implement state-of-the-art algorithms.\",\r\n    \"department\": \"R&D\",\r\n    \"location\": \"Boston\",\r\n    \"jobType\": \"Full-time\",\r\n    \"requirements\": [\r\n        \"PhD in Computer Science or Machine Learning\",\r\n        \"Deep expertise in AWS/Azure services\",\r\n        \"Strong Python and PyTorch expertise\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/job-post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"job-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/job-post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"job-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/job-post/683870eb29590b2e2bf87a86",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"job-post",
+								"683870eb29590b2e2bf87a86"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/job-post/683870eb29590b2e2bf87a86",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"job-post",
+								"683870eb29590b2e2bf87a86"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "status update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"683871c52adeff90ca813498\",\r\n    \"status\": 0 // 0 active , 2 inactive\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/job-post/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"job-post",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list - web",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/job-post/web",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"job-post",
+								"web"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "admin@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

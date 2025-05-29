@@ -1,6 +1,6 @@
 import { asyncErrorHandler, Error, Response } from "express-error-catcher";
 import model from "../model/index.js";
-import { currentDate, currentTime, generatePermalink, isValidObjectId, paginationParams, uwantedFields } from "../helper/functions.js";
+import { currentDate, currentTime, generatePermalink, isValidObjectId, paginationParams, unwantedFields } from "../helper/functions.js";
 
 export const create = asyncErrorHandler(async (req) => {
   const { name, sec1, sec2, sec3, sec4, sec5, sec6, faq, category } = req.body;
@@ -69,7 +69,7 @@ export const list = asyncErrorHandler(async (req) => {
 
   if (!isNull(category)) query.category = category;
 
-  const data = await model.Service.find(query).skip(skip).limit(limit).select(uwantedFields()).lean();
+  const data = await model.Service.find(query).skip(skip).limit(limit).select(unwantedFields()).lean();
 
   return new Response("success", { data }, 200);
 });

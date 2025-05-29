@@ -78,7 +78,7 @@ export function paginationParams(query) {
   return { page, limit, skip };
 }
 
-export const uwantedFields = (obj = false) => (obj ? { createdAt: 0, updatedAt: 0, __v: 0 } : "-createdAt -updatedAt -__v");
+export const unwantedFields = (obj = false) => (obj ? { createdAt: 0, updatedAt: 0, __v: 0 } : "-createdAt -updatedAt -__v");
 
 export function isValidObjectId(id) {
   return Types.ObjectId.isValid(id) && new Types.ObjectId(id).toString() === id;

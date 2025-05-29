@@ -11,6 +11,10 @@ import commonRouter from "./routes/common.router.js";
 import works from "./routes/works.router.js";
 import service from "./routes/service.router.js";
 
+import contact from "./routes/contact.router.js";
+
+import jobPost from "./routes/jobPost.router.js";
+
 router.use("/", indexRouter);
 
 router.use("/insight", insightRouter);
@@ -22,5 +26,9 @@ router.use("/common", commonRouter);
 router.use("/works", works);
 
 router.use("/service", service);
+
+router.use("/contact", contact);
+
+router.use("/job-post", jobPost);
 
 export default router;

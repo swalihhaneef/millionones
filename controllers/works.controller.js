@@ -1,6 +1,6 @@
 import { asyncErrorHandler, Error, Response } from "express-error-catcher";
 import model from "../model/index.js";
-import { currentDate, currentTime, generatePermalink, isValidObjectId, paginationParams, uwantedFields } from "../helper/functions.js";
+import { currentDate, currentTime, generatePermalink, isValidObjectId, paginationParams, unwantedFields } from "../helper/functions.js";
 import { ALL_CATEGORY } from "../constants.js";
 
 export const create = asyncErrorHandler(async (req) => {
@@ -78,7 +78,7 @@ export const list = asyncErrorHandler(async (req) => {
 
   const count = await model.Work.countDocuments(query);
 
-  const data = await model.Work.find(query).skip(skip).limit(limit).select(uwantedFields()).sort({ _id: -1 });
+  const data = await model.Work.find(query).skip(skip).limit(limit).select(unwantedFields()).sort({ _id: -1 });
 
   return new Response("success", { count, page, limit, data }, 200);
 });
@@ -114,7 +114,7 @@ export const details = asyncErrorHandler(async (req) => {
 
   if (isNull(query._id) && isNull(query.slug)) throw new Error("Please provide a id or slug");
 
-  const data = await model.Work.findOne(query).select(uwantedFields());
+  const data = await model.Work.findOne(query).select(unwantedFields());
 
   if (!data) throw new Error("Data not found", 404);
 

@@ -25,4 +25,4 @@ schema.methods.validatePassword = function (password, hashedPassword) {
   return compareSync(password, hashedPassword);
 };
 
-export const User = model("user", schema);
+export default model("user", schema);
