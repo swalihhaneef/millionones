@@ -75,7 +75,7 @@ export const list = asyncErrorHandler(async (req) => {
 
   const count = await model.JobPost.countDocuments(query);
 
-  const data = await model.JobPost.find(query).skip(skip).limit(limit).select(unwantedFields());
+  const data = await model.JobPost.find(query).sort({ _id: -1 }).skip(skip).limit(limit).select(unwantedFields());
 
   return new Response(null, { count, data }, 200);
 });
