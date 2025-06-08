@@ -46,7 +46,9 @@ export const loginUser = asyncErrorHandler(async (req, res) => {
 export const logoutUser = asyncErrorHandler(async (req, res) => {
   try {
     res.clearCookie("tkn", {
-      sameSite: "strict",
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
     });
 
     return new Response("Logout successful", null, 200);
