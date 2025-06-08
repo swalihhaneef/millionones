@@ -28,6 +28,7 @@ export const loginUser = asyncErrorHandler(async (req, res) => {
   res.cookie("tkn", token, {
     httpOnly: true,
     secure: true,
+    sameSite: "none",
     maxAge: accessTokenMaxAge,
   });
 

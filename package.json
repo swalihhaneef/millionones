@@ -10,11 +10,12 @@
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "chalk": "^5.4.1",
+    "cookie": "^1.0.2",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^16.4.7",
-    "express": "~4.16.1",
+    "express": "^5.1.0",
     "express-error-catcher": "^1.0.2",
     "helmet": "^8.0.0",
     "http-errors": "~1.6.3",
