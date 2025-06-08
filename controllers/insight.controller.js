@@ -106,9 +106,9 @@ export const latestDetails = asyncErrorHandler(async (req) => {
 
 export const createUser = async () => {
   try {
-    let name = "admin";
-    let email = "admin@example.com";
-    let password = "admin";
+    let name = "Admin";
+    let email = "mail@horatio.in";
+    let password = "Horatio@369";
     let ip = "127.0.0.1";
 
     const existingUser = await model.User.findOne({ email });
