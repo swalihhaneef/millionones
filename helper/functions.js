@@ -71,7 +71,7 @@ export function paginationParams(query) {
   page = Number(page);
   limit = Number(limit);
 
-  limit = limit > 100 ? 20 : limit;
+  // limit = limit > 100 ? 20 : limit;
 
   const skip = (page - 1) * limit;
 
@@ -82,4 +82,9 @@ export const unwantedFields = (obj = false) => (obj ? { createdAt: 0, updatedAt:
 
 export function isValidObjectId(id) {
   return Types.ObjectId.isValid(id) && new Types.ObjectId(id).toString() === id;
+}
+
+export async function counter(model, key = "") {
+  const count = (await model.countDocuments()) + 1;
+  return (key ? `${key}` : "") + count.toString().padStart(4, "0");
 }

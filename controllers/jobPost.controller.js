@@ -1,6 +1,6 @@
 import { asyncErrorHandler, Error, Response } from "express-error-catcher";
 import model from "../model/index.js";
-import { currentDate, currentTime, generatePermalink, isValidObjectId, paginationParams, unwantedFields } from "../helper/functions.js";
+import { counter, currentDate, currentTime, generatePermalink, isValidObjectId, paginationParams, unwantedFields } from "../helper/functions.js";
 
 export const create = asyncErrorHandler(async (req) => {
   const { title, desc, department, location, jobType, requirements = [] } = req.body;
@@ -18,6 +18,8 @@ export const create = asyncErrorHandler(async (req) => {
 
   if (exists) throw new Error(`${exists.title} already exists`, 400);
 
+  const uniqueId = await counter(model.JobPost, "JOB");
+
   const data = await model
     .JobPost({
       title,
@@ -27,6 +29,7 @@ export const create = asyncErrorHandler(async (req) => {
       location,
       jobType,
       requirements,
+      uniqueId,
       addedBy: req.user._id,
     })
     .save();

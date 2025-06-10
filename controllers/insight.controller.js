@@ -70,18 +70,17 @@ export const listInsight = asyncErrorHandler(async (req) => {
 export const listDetailsWeb = asyncErrorHandler(async (req) => {
   const type = req.params.type;
 
-  if (!["blog", "event", "news"].includes(type)) throw new Error("Invalid type");
+  if (!["blog", "event", "news", "all"].includes(type)) throw new Error("Invalid type");
 
   const { skip, limit } = paginationParams(req.query);
 
-  const count = await model.Insight.countDocuments({ status: 0, type });
+  const query = { status: 0 };
 
-  const data = await model.Insight.find({ status: 0, type })
-    .sort({ _id: -1 })
-    .skip(skip)
-    .limit(limit)
-    .select("name desc permalink image")
-    .sort({ _id: -1 });
+  if (type !== "all") query.type = type;
+
+  const count = await model.Insight.countDocuments(query);
+
+  const data = await model.Insight.find(query).sort({ _id: -1 }).skip(skip).limit(limit).select("name desc permalink image type").sort({ _id: -1 });
 
   return new Response(null, { data, count }, 200);
 });

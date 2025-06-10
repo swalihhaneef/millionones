@@ -11,6 +11,7 @@ const schema = new Schema(
     jobType: { type: String, enum: ["Full-time", "Part-time", "Contract"], default: "Full-time" },
     requirements: [{ type: String, required: true }],
     slug: String,
+    uniqueId: String,
     addedBy: { type: Schema.Types.ObjectId, ref: "user" },
     updateBy: { type: Schema.Types.ObjectId, ref: "user" },
     date: { type: String, default: currentDate() },

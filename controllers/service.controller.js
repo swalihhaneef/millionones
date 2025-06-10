@@ -1,6 +1,6 @@
 import { asyncErrorHandler, Error, Response } from "express-error-catcher";
 import model from "../model/index.js";
-import { currentDate, currentTime, generatePermalink, isValidObjectId, paginationParams, unwantedFields } from "../helper/functions.js";
+import { counter, currentDate, currentTime, generatePermalink, isValidObjectId, paginationParams, unwantedFields } from "../helper/functions.js";
 
 export const create = asyncErrorHandler(async (req) => {
   const { name, sec1, sec2, sec3, sec4, sec5, sec6, faq, category } = req.body;
