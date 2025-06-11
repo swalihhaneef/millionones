@@ -95,10 +95,15 @@ export const insightDetailList = asyncErrorHandler(async (req) => {
 
 export const latestDetails = asyncErrorHandler(async (req) => {
   const type = req.params.type;
+  const { slug } = req.query;
 
   if (!["blog", "event", "news"].includes(type)) throw new Error("Invalid type");
 
-  const data = await model.Insight.find({ status: 0, type }).select("name desc permalink image").sort({ _id: -1 }).limit(3);
+  const query = { status: 0, type };
+
+  if (!isNull(slug)) query.permalink = { $ne: slug };
+
+  const data = await model.Insight.find(query).select("name desc permalink image type").sort({ _id: -1 }).limit(3);
 
   return new Response(null, { data }, 200);
 });

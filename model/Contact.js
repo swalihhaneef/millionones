@@ -10,7 +10,7 @@ const schema = new Schema(
     mobile: { type: String, required: true },
     remarks: { type: String },
     additional: {
-      help: String,
+      service: String,
     },
     date: { type: String, default: currentDate() },
     time: { type: String, default: currentTime() },
