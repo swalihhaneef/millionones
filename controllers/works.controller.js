@@ -97,7 +97,7 @@ export const webList = asyncErrorHandler(async (req) => {
   const data = await model.Work.find(query)
     .skip(skip)
     .limit(limit)
-    .select("title img category client")
+    .select("title img category client slug")
     .populate("category", "name")
     .sort({ _id: -1 });
 
@@ -145,7 +145,7 @@ export const relatedWorks = asyncErrorHandler(async (req) => {
 
   const count = await model.Work.countDocuments(query);
 
-  const data = await model.Work.find(query).skip(skip).limit(limit).select("title img client").sort({ _id: -1 });
+  const data = await model.Work.find(query).skip(skip).limit(limit).select("title img client slug").sort({ _id: -1 });
 
   return new Response("success", { count, data }, 200);
 });
