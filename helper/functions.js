@@ -4,6 +4,7 @@ import fs from "fs";
 import moment from "moment";
 
 import { Types } from "mongoose";
+import { Error } from "express-error-catcher";
 
 const storage = (folder) =>
   multer.diskStorage({
@@ -27,7 +28,7 @@ const fileFilter = (req, file, cb) => {
   if (allowedExtensions.includes(ext)) {
     cb(null, true);
   } else {
-    cb(new ErrorHandler(`${allowedExtensions.join(",").replace(/[.,]/g, " ").replace(/\s/, "")} files are allowed`, 400));
+    cb(new Error(`${allowedExtensions.join(",").replace(/[.,]/g, " ").replace(/\s/, "")} files are allowed`, 400));
   }
 };
 
