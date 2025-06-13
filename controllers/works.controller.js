@@ -126,3 +126,26 @@ export const deleteWork = asyncErrorHandler(async (req) => {
 
   return new Response("Works deleted successfully", null, 200);
 });
+
+export const relatedWorks = asyncErrorHandler(async (req) => {
+  const { skip, limit, page } = paginationParams(req.query);
+
+  let { category, slug } = req.query;
+
+  if (!isNull(slug)) {
+    const work = await model.Work.findOne({ slug }).select("category");
+
+    if (!work) throw new Error("Work not found", 404);
+    category = work.category;
+  }
+
+  if (isNull(category)) throw new Error("Category or slug is required");
+
+  const query = { status: 0, category };
+
+  const count = await model.Work.countDocuments(query);
+
+  const data = await model.Work.find(query).skip(skip).limit(limit).select("title img client").sort({ _id: -1 });
+
+  return new Response("success", { count, data }, 200);
+});
