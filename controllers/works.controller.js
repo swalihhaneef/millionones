@@ -114,7 +114,7 @@ export const details = asyncErrorHandler(async (req) => {
 
   if (isNull(query._id) && isNull(query.slug)) throw new Error("Please provide a id or slug");
 
-  const data = await model.Work.findOne(query).select(unwantedFields());
+  const data = await model.Work.findOne(query).select(unwantedFields()).populate("category", "name");
 
   if (!data) throw new Error("Data not found", 404);
 
