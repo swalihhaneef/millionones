@@ -5,6 +5,7 @@ import Work from "./Work.js";
 import Service from "./Service.js";
 import Contact from "./Contact.js";
 import JobPost from "./JobPost.js";
+import Testimonial from "./Testimonial.js";
 
 export default {
   Insight,
@@ -14,4 +15,5 @@ export default {
   Service,
   Contact,
   JobPost,
+  Testimonial,
 };
