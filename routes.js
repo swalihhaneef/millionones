@@ -33,6 +33,6 @@ router.use("/contact", contact);
 
 router.use("/job-post", jobPost);
 
-routert.use("/testimonial", testimonial);
+router.use("/testimonial", testimonial);
 
 export default router;
