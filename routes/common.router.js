@@ -8,6 +8,10 @@ import auth from "../middleware/auth.js";
 
 router.get("/category", controllers.category);
 
+router.get("/countries",controllers.countries)
+
+router.get("/states",controllers.states)
+
 router.use(auth);
 
 router.post(
@@ -18,5 +22,6 @@ router.post(
   },
   imageFileName
 );
+
 
 export default router;

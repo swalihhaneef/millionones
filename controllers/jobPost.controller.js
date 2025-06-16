@@ -125,3 +125,9 @@ export const webList = asyncErrorHandler(async (req) => {
 
   return new Response(null, { count, data }, 200);
 });
+
+export const options = asyncErrorHandler(async (req) => {
+  const data = await model.JobPost.find({ status: 0 }).select({ label: "$title", value: "$_id" }).sort({ _id: -1 });
+
+  return new Response(null, {  data }, 200);
+});
