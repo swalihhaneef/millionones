@@ -25,4 +25,6 @@ router.post("/", jobFile.single("file"), controllers.create);
 
 router.use(auth);
 
+router.get("/", controllers.list)
+
 export default router;

@@ -22,4 +22,11 @@ const schema = new Schema(
   }
 );
 
+// schema.virtual("countryData", {
+//   ref: "Countries",
+//   localField: "country",
+//   foreignField: "id",
+//   justOne: true,
+// });
+
 export default model("jobApplication", schema);
