@@ -83,7 +83,7 @@ export const webList = asyncErrorHandler(async (req) => {
 
   if (!isNull(category)) query.category = category;
 
-  const data = await model.Service.find(query).sort({ _id: -1 }).skip(skip).limit(limit).select(`name slug`).populate("category", "name").lean();
+  const data = await model.Service.find(query).skip(skip).limit(limit).select(`name slug`).populate("category", "name order desc image").lean();
 
   return new Response("success", { data }, 200);
 });
