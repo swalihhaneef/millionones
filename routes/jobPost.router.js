@@ -7,6 +7,7 @@ import * as controller from "../controllers/jobPost.controller.js";
 const router = express.Router();
 
 router.get("/web", controller.webList);
+router.get("/options", controller.options);
 
 router.use(auth);
 

@@ -5,6 +5,10 @@ import Work from "./Work.js";
 import Service from "./Service.js";
 import Contact from "./Contact.js";
 import JobPost from "./JobPost.js";
+import Testimonial from "./Testimonial.js";
+import JobApplication from "./JobApplication.js";
+import Country from "./Country.js";
+import State from "./State.js";
 
 export default {
   Insight,
@@ -14,4 +18,8 @@ export default {
   Service,
   Contact,
   JobPost,
+  JobApplication,
+  Testimonial,
+  Country,
+  State,
 };

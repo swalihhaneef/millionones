@@ -15,6 +15,10 @@ import contact from "./routes/contact.router.js";
 
 import jobPost from "./routes/jobPost.router.js";
 
+import testimonial from "./routes/testimonial.router.js";
+
+import jobApplication from "./routes/jobApplication.router.js";
+
 router.use("/", indexRouter);
 
 router.use("/insight", insightRouter);
@@ -30,5 +34,9 @@ router.use("/service", service);
 router.use("/contact", contact);
 
 router.use("/job-post", jobPost);
+
+router.use("/job-application", jobApplication);
+
+router.use("/testimonial", testimonial);
 
 export default router;

@@ -1,9 +1,10 @@
 import { model, Schema } from "mongoose";
-import { currentDate, currentTime } from "../helper/functions";
+import { currentDate, currentTime } from "../helper/functions.js";
 
 const schema = new Schema(
   {
     ip: String,
+    status: { type: Number, default: 0 },
     name: String,
     designation: String,
     image: String,
@@ -17,7 +18,7 @@ const schema = new Schema(
     upTime: String,
   },
   {
-    timestamps:true
+    timestamps: true,
   }
 );
-export default model("testimonial",schema)
+export default model("testimonial", schema);
