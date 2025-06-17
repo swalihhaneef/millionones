@@ -75,7 +75,7 @@ export const list = asyncErrorHandler(async (req) => {
 });
 
 export const webList = asyncErrorHandler(async (req) => {
-  const { category } = req.query;
+    const { category, type } = req.query;
 
   const { skip, limit } = paginationParams(req.query);
 
@@ -83,7 +83,13 @@ export const webList = asyncErrorHandler(async (req) => {
 
   if (!isNull(category)) query.category = category;
 
-  const data = await model.Service.find(query).skip(skip).limit(limit).select(`name slug`).populate("category", "name order desc image").lean();
+    if (!isNull(type) && type == 2) {
+        query.category = { $eq: '685189f1e517e36792f86536' }
+    } else {
+        query.category = { $ne: '685189f1e517e36792f86536' }
+    }
+
+    const data = await model.Service.find(query).skip(skip).limit(limit).select(`name slug description`).populate("category", "name order desc image").lean();
 
   return new Response("success", { data }, 200);
 });

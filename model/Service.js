@@ -15,6 +15,7 @@ const Section2Schema = new Schema({
 const schema = new Schema({
   name: { type: String, required: true },
   slug: { type: String, required: true },
+  description: { type: String },
   status: { type: Number, default: 0 },
   sec1: {
     title: String,
