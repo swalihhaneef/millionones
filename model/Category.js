@@ -1,4 +1,5 @@
 import { model, Schema } from "mongoose";
+import { currentDate, currentTime } from "../helper/functions.js";
 
 const schema = new Schema(
   {
@@ -8,6 +9,12 @@ const schema = new Schema(
     image: { type: String, required: true },
     desc: String,
     order: Number,
+    brands: [],
+
+    addedBy: { type: Schema.Types.ObjectId, ref: "user" },
+    updateBy: { type: Schema.Types.ObjectId, ref: "user" },
+    date: { type: String, default: currentDate() },
+    time: { type: String, default: currentTime() },
   },
   {
     timestamps: true,

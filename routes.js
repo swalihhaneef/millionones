@@ -19,6 +19,8 @@ import testimonial from "./routes/testimonial.router.js";
 
 import jobApplication from "./routes/jobApplication.router.js";
 
+import category from "./routes/category.router.js";
+
 router.use("/", indexRouter);
 
 router.use("/insight", insightRouter);
@@ -38,5 +40,7 @@ router.use("/job-post", jobPost);
 router.use("/job-application", jobApplication);
 
 router.use("/testimonial", testimonial);
+
+router.use("/category", category);
 
 export default router;
