@@ -53,6 +53,7 @@ export const deleteInsight = asyncErrorHandler(async (req) => {
   const data = await model.Insight.findByIdAndUpdate(req.params.id, {
     $set: {
       status: 1,
+      updateBy: req.user._id,
     },
   });
 

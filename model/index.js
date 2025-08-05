@@ -9,6 +9,7 @@ import Testimonial from "./Testimonial.js";
 import JobApplication from "./JobApplication.js";
 import Country from "./Country.js";
 import State from "./State.js";
+import Industries from "./Industries.js";
 
 export default {
   Insight,
@@ -22,4 +23,5 @@ export default {
   Testimonial,
   Country,
   State,
+  Industries,
 };

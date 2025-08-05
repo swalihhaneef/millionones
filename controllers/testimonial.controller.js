@@ -50,6 +50,7 @@ export const deleteTestimonial = asyncErrorHandler(async (req) => {
   const data = await model.Testimonial.findByIdAndUpdate(req.params.id, {
     $set: {
       status: 1,
+      updateBy: req.user._id,a
     },
   });
 

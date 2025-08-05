@@ -21,6 +21,8 @@ import jobApplication from "./routes/jobApplication.router.js";
 
 import category from "./routes/category.router.js";
 
+import industries from "./routes/industries.router.js";
+
 router.use("/", indexRouter);
 
 router.use("/insight", insightRouter);
@@ -42,5 +44,7 @@ router.use("/job-application", jobApplication);
 router.use("/testimonial", testimonial);
 
 router.use("/category", category);
+
+router.use("/industries", industries);
 
 export default router;

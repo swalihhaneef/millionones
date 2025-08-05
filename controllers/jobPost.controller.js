@@ -97,7 +97,7 @@ export const details = asyncErrorHandler(async (req) => {
 });
 
 export const deleteJobPost = asyncErrorHandler(async (req) => {
-  await model.JobPost.updateOne({ _id: req.params.id }, { status: 1 });
+  await model.JobPost.updateOne({ _id: req.params.id }, { status: 1, updateBy: req.user._id });
 
   return new Response("job post deleted successfully", null, 200);
 });
@@ -129,5 +129,5 @@ export const webList = asyncErrorHandler(async (req) => {
 export const options = asyncErrorHandler(async (req) => {
   const data = await model.JobPost.find({ status: 0 }).select({ label: "$title", value: "$_id" }).sort({ _id: -1 });
 
-  return new Response(null, {  data }, 200);
+  return new Response(null, { data }, 200);
 });

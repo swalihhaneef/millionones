@@ -122,7 +122,7 @@ export const details = asyncErrorHandler(async (req) => {
 });
 
 export const deleteWork = asyncErrorHandler(async (req) => {
-  await model.Work.updateOne({ _id: req.params.id }, { status: 1 });
+  await model.Work.updateOne({ _id: req.params.id }, { status: 1, updateBy: req.user._id });
 
   return new Response("Works deleted successfully", null, 200);
 });
