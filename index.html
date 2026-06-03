@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bread Squeeze Scroll Effect</title>
+    <style>
+      body {
+        margin: 0;
+        height: 300vh;
+        background: #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .image-wrapper {
+        width: 600px;
+        height: 600px;
+        position: relative;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        clip-path: url(#breadClip);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image-wrapper">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <clipPath id="breadClip">
+            <path id="breadPath" d="M0,0 Q50,0 100,0 L100,100 Q50,100 0,100 Z" />
+          </clipPath>
+        </defs>
+        <image
+          href="https://creoglobal.co/_next/image?url=%2Fassets%2Fimages%2Ftransformation.webp&w=1080&q=75"
+          clip-path="url(#breadClip)"
+          width="100%"
+          height="100%"
+          preserveAspectRatio="xMidYMid slice" />
+      </svg>
+    </div>
+
+    <script>
+      const breadPath = document.getElementById("breadPath");
+      let scrollTimeout;
+
+      function applySqueeze(squish = 5) {
+        breadPath.setAttribute("d", `M0,0 Q50,${squish} 100,0 L100,100 Q50,${100 - squish} 0,100 Z`);
+      }
+
+      function resetSqueeze() {
+        breadPath.setAttribute("d", `M0,0 Q50,0 100,0 L100,100 Q50,100 0,100 Z`);
+      }
+
+      window.addEventListener("scroll", () => {
+        applySqueeze(3); // You can tweak this number to get deeper curve
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          resetSqueeze();
+        }, 100);
+      });
+    </script>
+  </body>
+</html>

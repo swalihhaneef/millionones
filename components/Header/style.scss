@@ -1,0 +1,131 @@
+header {
+  @apply w-full fixed top-0 z-[999] transition-all duration-300 bg-white transform translate-y-0;
+
+  .head-container {
+    @apply h-full;
+    padding-left: 3.125em;
+    padding-right: 3.125em;
+
+    @media screen and (max-width:1300px) {
+      padding-left: 1.125em;
+      padding-right: 1.125em;
+    }
+  }
+
+  .inner-header {
+    @apply w-full h-full flex items-center transition-all duration-500;
+  }
+
+  .inner-header.expanded {
+    @apply justify-between;
+  }
+
+  .menus {
+    @apply hidden lg:flex text-base font-normal w-full ml-14;
+
+    .main-menu {
+      @apply flex justify-between gap-x-12 w-full;
+    }
+
+    .navigation {
+      ul {
+        @apply flex gap-x-9;
+      }
+
+      li svg path {
+        fill: black !important;
+      }
+    }
+  }
+
+  li {
+    @apply hover:cursor-pointer;
+  }
+
+  // Smooth show/hide on scroll
+  &.scrollHead {
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  &.scrollHead.visible {
+    transform: translateY(0);
+  }
+
+  &.scrollHead {
+    background-color: rgba(0, 0, 0, 0.85);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &.bg-black {
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &.scrollHead .logo img,
+  &.bg-black .logo img {
+    filter: invert(1);
+    transition: filter 0.3s ease-in-out;
+  }
+
+  &.scrollHead .navigation li svg path {
+    fill: rgb(255, 255, 255) !important;
+  }
+}
+
+
+.off-canvas-wrap {
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sidebar {
+  min-height: 100vh;
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  width: 70%;
+  background: #fff;
+  overflow: hidden;
+  // overflow-y: auto;
+}
+
+.sidebar .logo {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  font-size: 1rem;
+  color: #222;
+  padding: 1rem 2.5rem;
+}
+
+.vedio-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .vedio-container {
+    max-width: 600px;
+    max-height: 56vh;
+
+    @media screen and (max-width:576px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
