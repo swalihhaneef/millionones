@@ -7,24 +7,24 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/common/ScrollToTop";
 export const metadata = {
   title: {
-    default: "HORATIO | Innovative AI & Digital Marketing Company in Kerala",
-    template: "%s | HORATIO",
+    default: "MILLIONONES | Innovative AI & Digital Marketing Company in Kerala",
+    template: "%s | MILLIONONES",
   },
   description:
-    "Horatio helps businesses evolve with cutting-edge AI, web design, branding, and marketing strategies that inspire growth and digital transformation.",
+    "MILLIONONES helps businesses evolve with cutting-edge AI, web design, branding, and marketing strategies that inspire growth and digital transformation.",
   metadataBase: new URL("https://www.horatio.in"),
   verification: {
     google: "SOWbX6oWZz7oC7V7LXf_tQ8TJKZA-yCNAxjKhr94Caw",
   },
   openGraph: {
     title: {
-      default: "HORATIO | Innovative AI & Digital Marketing Company in Kerala",
-      template: "%s | HORATIO",
+      default: "MILLIONONES | Innovative AI & Digital Marketing Company in Kerala",
+      template: "%s | MILLIONONES",
     },
     description:
-      "Horatio helps businesses evolve with cutting-edge AI, web design, branding, and marketing strategies that inspire growth and digital transformation.",
+      "Millionones helps businesses evolve with cutting-edge AI, web design, branding, and marketing strategies that inspire growth and digital transformation.",
     url: "https://www.horatio.in",
-    siteName: "Horatio",
+    siteName: "Millionones",
     locale: "en_IN",
     type: "website",
     images: [
@@ -32,14 +32,14 @@ export const metadata = {
         url: "https://www.horatio.in/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "HORATIO | Innovative AI & Digital Marketing Company in Kerala",
+        alt: "MILLIONONES | Innovative AI & Digital Marketing Company in Kerala",
         type: "image/png",
       },
       {
         url: "https://www.horatio.in/images/og-image-square.png",
         width: 600,
         height: 600,
-        alt: "HORATIO | Innovative AI & Digital Marketing Company in Kerala",
+        alt: "MILLIONONES | Innovative AI & Digital Marketing Company in Kerala",
         type: "image/png",
       },
     ],

@@ -78,11 +78,11 @@ const Header = () => {
         left: 0,
         translateY: 0,
         translateX: 0,
-        width: "140px",
+        width: "180px",
         duration: 1.5,
         onComplete: () => {
           setMainHead(true)
-          logoRef.current.style.width = "140px"
+          logoRef.current.style.width = "180px"
         },
       });
     }
@@ -166,7 +166,7 @@ const Header = () => {
                         scale: 1.1,
                       }}
                       key={item.link}>
-                      <Link className="text-xl" href={item.link}>{item.name}</Link>
+                      <Link className="text-base" href={item.link}>{item.name}</Link>
                     </motion.li>
                   ))}
                 </ul>

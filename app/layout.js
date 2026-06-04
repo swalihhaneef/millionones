@@ -5,9 +5,9 @@ import { Roboto } from "next/font/google";
 import Script from "next/script";
 export const metadata = {
   title: {
-    default: "HORATIO",
+    default: "MILLIONONES",
   },
-  description: "HORATIO",
+  description: "MILLIONONES",
 };
 
 const roboto = Roboto({

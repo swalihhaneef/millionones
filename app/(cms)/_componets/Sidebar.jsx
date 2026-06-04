@@ -56,7 +56,7 @@ const Sidebar = () => {
       {/* Logo section */}
       <div className="flex justify-between items-center">
         <Link href={"/admin"}>
-          <span className="logo font-bold text-xl">Horatio</span>
+          <span className="logo font-bold text-xl">Millionones</span>
         </Link>
         <span className="cursor-pointer">
           <Menu />
