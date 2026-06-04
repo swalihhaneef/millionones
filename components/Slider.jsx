@@ -57,9 +57,9 @@ export default function ScrollZoom({ className = "" }) {
   useEffect(() => {
     if (textRef.current) {
       gsap.to(textRef.current, {
-        delay: 2,
+        delay: 5,
         duration: 3, // Typing speed
-        text: "Thrive Creatively",
+        text: "Make Millions Notice",
         ease: "power1.out",
         onComplete: () => {
           if (cursorRef.current) {

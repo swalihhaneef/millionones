@@ -12,7 +12,7 @@ export const metadata = {
   },
   description:
     "MILLIONONES helps businesses evolve with cutting-edge AI, web design, branding, and marketing strategies that inspire growth and digital transformation.",
-  metadataBase: new URL("https://www.horatio.in"),
+  metadataBase: new URL("https://www.millionones.com"),
   verification: {
     google: "SOWbX6oWZz7oC7V7LXf_tQ8TJKZA-yCNAxjKhr94Caw",
   },
@@ -22,21 +22,21 @@ export const metadata = {
       template: "%s | MILLIONONES",
     },
     description:
-      "Millionones helps businesses evolve with cutting-edge AI, web design, branding, and marketing strategies that inspire growth and digital transformation.",
-    url: "https://www.horatio.in",
-    siteName: "Millionones",
+      "MILLIONONES helps businesses evolve with cutting-edge AI, web design, branding, and marketing strategies that inspire growth and digital transformation.",
+    url: "https://www.millionones.com/",
+    siteName: "MILLIONONES",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://www.horatio.in/images/og-image.png",
+        url: "https://www.millionones.com/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "MILLIONONES | Innovative AI & Digital Marketing Company in Kerala",
         type: "image/png",
       },
       {
-        url: "https://www.horatio.in/images/og-image-square.png",
+        url: "https://www.millionones.com/images/og-image-square.png",
         width: 600,
         height: 600,
         alt: "MILLIONONES | Innovative AI & Digital Marketing Company in Kerala",
@@ -45,9 +45,9 @@ export const metadata = {
     ],
   },
   alternates: {
-    canonical: "https://www.horatio.in",
+    canonical: "https://www.millionones.com/",
     languages: {
-      "en-IN": "https://www.horatio.in/en",
+      "en-IN": "https://www.millionones.com/en",
     },
   },
 };

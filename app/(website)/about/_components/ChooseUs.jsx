@@ -38,7 +38,7 @@ export default function ChooseUs() {
       <h2 className="text-4xl text-center font-bold mb-10">Why Choose Us</h2>
       {/* <h3 className="text-3xl font-semibold mb-8">Values</h3> */}
       <p className="mb-8 max-w-6xl mx-auto text-lg font-medium">
-        In Horatio, we not only offer services - we create stories of digital success. Here is the reason why brands choose us
+        In Millionones, we not only offer services - we create stories of digital success. Here is the reason why brands choose us
       </p>
 
       <div className="space-y-4 max-w-6xl mx-auto">

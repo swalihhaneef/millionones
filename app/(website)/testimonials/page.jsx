@@ -4,8 +4,8 @@ import Footer from '@/components/Footer'
 import { setMetaTitleAndDesc } from '@/helpers/functions';
 
 export const metadata = setMetaTitleAndDesc(
-  "Client Testimonials | Horatio Kerala",
-  "Hear from our clients! Discover how Horatio’s AI, digital marketing, web design, and branding solutions have delivered measurable results for businesses."
+  "Client Testimonials | Millionones Kerala",
+  "Hear from our clients! Discover how Millionones AI, digital marketing, web design, and branding solutions have delivered measurable results for businesses."
 );
 
 

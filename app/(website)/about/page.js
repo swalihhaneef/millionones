@@ -11,8 +11,8 @@ import WhoWeAre from "./_components/WhoWeAre";
 import { setMetaTitleAndDesc } from "@/helpers/functions";
 
 export const metadata = setMetaTitleAndDesc(
-  "About Horatio | AI, Digital Marketing & Web Design Experts Kerala",
-  "Learn about Horatio, a Kerala-based agency specializing in AI, digital marketing, branding, web design, and web development. Creativity meets technology."
+  "About Millionones | AI, Digital Marketing & Web Design Experts Kerala",
+  "Learn about Millionones, a Kerala-based agency specializing in AI, digital marketing, branding, web design, and web development. Creativity meets technology."
 );
 
 const aboutDetails = [
@@ -100,7 +100,7 @@ const About = () => {
                   <h3 className="font-bold text-2xl">Our Mission</h3>
                 </div>
                 <p className="text-lg leading-relaxed">
-                  In Horatio, our mission is to strengthen businesses by offering innovative and customized digital marketing solutions that improve
+                  In Millionones, our mission is to strengthen businesses by offering innovative and customized digital marketing solutions that improve
                   online presence and produce real, measurable results. We are inspired by a passion for combining creativity with advanced technology
                   and helping brands continuously and safely in the digital world.
                 </p>
@@ -112,7 +112,7 @@ const About = () => {
                   <h3 className="font-bold text-2xl">Our Vision</h3>
                 </div>
                 <p className="text-lg leading-relaxed">
-                  We see Horatio as a global leader in digital marketing and web design who is recognized for creativity, innovation and a
+                  We see Millionones as a global leader in digital marketing and web design who is recognized for creativity, innovation and a
                   customer-first attitude. Our goal is to create a digital place where each brand can unlock its full potential and grow with purpose,
                   impact and success.
                 </p>
@@ -130,7 +130,7 @@ const About = () => {
             </div>
             <h2 className="text-3xl font-bold text-gray-800">Our Philosophy</h2>
             <p className="mt-4 text-gray-600 max-w-3xl mx-auto text-[1.15em]">
-              In Horatio, we believe that real digital success is the combination of innovation, technology and creativity. We don&apos;t just follow
+              In Millionones, we believe that real digital success is the combination of innovation, technology and creativity. We don&apos;t just follow
               the trends - we assume them. Our philosophy lies in going beyond simple and distributing custom strategies designed to meet the unique
               goals of each brand that we work with.
             </p>
@@ -211,11 +211,11 @@ const About = () => {
           <div className="bg-gray-900 text-white flex flex-col justify-center px-10 py-12">
             <h2 className="text-2xl mb-6">Founder’s Message</h2>
             <p className="leading-tight mb-6 text-lg">
-              At Horatio, we believe that true growth goes beyond just numbers. In an era led by AI and constant digital evolution, creativity is what
+              At Millionones, we believe that true growth goes beyond just numbers. In an era led by AI and constant digital evolution, creativity is what
               sets brands apart—and that’s where we thrive.
               <br />
               <br />
-              As the founder of Horatio, my vision has always been clear: Thrive Creatively, not just financially. While revenue keeps a business
+              As the founder of Millionones, my vision has always been clear: Thrive Creatively, not just financially. While revenue keeps a business
               running, creativity keeps it alive. We&apos;re here to build brands with purpose, passion, and powerful storytelling backed by the
               latest technology.
               <br />

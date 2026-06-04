@@ -6,8 +6,8 @@ import InsightSection from "@/components/Home/Insight";
 import { setMetaTitleAndDesc } from "@/helpers/functions";
 
 export const metadata = setMetaTitleAndDesc(
-  "Our Work | Horatio Digital Agency Kerala",
-  "Explore Horatio’s portfolio of AI, digital marketing, branding, and web development projects. See how we deliver impactful results for businesses."
+  "Our Work | Millionones Digital Agency Kerala",
+  "Explore Millionones’ portfolio of AI, digital marketing, branding, and web development projects. See how we deliver impactful results for businesses."
 );
 
 const page = () => {

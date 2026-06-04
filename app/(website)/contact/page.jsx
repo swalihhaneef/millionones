@@ -3,8 +3,8 @@ import ContactForm from "./_comonents/Form";
 import { setMetaTitleAndDesc } from "@/helpers/functions";
 
 export const metadata = setMetaTitleAndDesc(
-  "Contact Horatio | AI, Digital Marketing & Web Solutions Kerala",
-  "Get in touch with Horatio for AI solutions, digital marketing, web design, branding, and web development services in Kerala. Let’s grow your business."
+  "Contact Millionones | AI, Digital Marketing & Web Solutions Kerala",
+  "Get in touch with Millionones for AI solutions, digital marketing, web design, branding, and web development services in Kerala. Let’s grow your business."
 );
 const page = () => {
   return (
@@ -55,7 +55,7 @@ const page = () => {
                         </div>
                         <div className="contact-item-detail">
                           <div className="text-16 medium is-info">View map</div>
-                          <div className="text-16 is-info lh-180">HORATIO - Digital Marketing Agency</div>
+                          <div className="text-16 is-info lh-180">MILLIONONES - Digital Marketing Agency</div>
                           <div className="text-16 is-info lh-180">FIRST FLOOR, 177/166F, ALIYARHAJI ROAD, Edathala, Aluva, Kochi, Kerala 683561</div>
                         </div>
                       </a>

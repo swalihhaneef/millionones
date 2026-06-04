@@ -85,7 +85,7 @@ export default function WelcomeModal() {
                 </div>
                 <div className="py-4 pb-3 hidden sm:flex">
                   <p className="text-sm ">
-                    Horatio empowered brands through cutting-edge AI,bold marketing,strategy design, and smart development to help them thrive
+                    Millionones empowered brands through cutting-edge AI,bold marketing,strategy design, and smart development to help them thrive
                     creatively in the digital era
                   </p>
                 </div>

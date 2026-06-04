@@ -6,8 +6,8 @@ import { setMetaTitleAndDesc } from "@/helpers/functions";
 import React from "react";
 
 export const metadata = setMetaTitleAndDesc(
-  "Horatio AI Solutions | Smart Technology & Business Growth Kerala",
-  "Unlock business potential with Horatio’s AI solutions. From intelligent automation to data-driven strategies, we help Kerala businesses innovate and excel."
+  "Millionones AI Solutions | Smart Technology & Business Growth Kerala",
+  "Unlock business potential with Millionones AI solutions. From intelligent automation to data-driven strategies, we help Kerala businesses innovate and excel."
 );
 
 const page = async () => {

@@ -8,8 +8,8 @@ import { Pagination } from "@mui/material";
 import { setMetaTitleAndDesc } from "@/helpers/functions";
 
 export const metadata = setMetaTitleAndDesc(
-  "Careers at Horatio | Join Our AI & Digital Marketing Team Kerala",
-  "Join Horatio, Kerala’s leading AI, digital marketing, web design, and branding agency. Explore career opportunities and grow with a creative, tech-driven team."
+  "Careers at Millionones | Join Our AI & Digital Marketing Team Kerala",
+  "Join Millionones, Kerala’s leading AI, digital marketing, web design, and branding agency. Explore career opportunities and grow with a creative, tech-driven team."
 );
 
 const getCareers = async ({ page = 1, limit }) => {

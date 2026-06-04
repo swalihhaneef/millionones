@@ -45,7 +45,7 @@ const OurStory = () => {
       <div className="md:w-1/2 text-gray-800">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Our story</h2>
         <p className="mb-6 text-lg leading-relaxed">
-          Founded in 2019 by visionary entrepreneur Sarath C in the heart of Kochi, Horatio has grown from a small, passionate team into one of
+          Founded in 2019 by visionary entrepreneur Sarath C in the heart of Kochi, Millionones has grown from a small, passionate team into one of
           Kerala’s most trusted digital marketing and web design agencies. With six years of experience, we blend creativity, strategy, and technology
           to deliver impactful, data-driven solutions. From startups to established brands, we help businesses tell their unique stories and achieve
           measurable digital success.

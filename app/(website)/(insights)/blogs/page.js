@@ -7,8 +7,8 @@ import InsightPagination from "../_components/InsightPagination";
 import { setMetaTitleAndDesc } from "@/helpers/functions";
 
 export const metadata = setMetaTitleAndDesc(
-  "Horatio Blog | AI, Digital Marketing & Web Design Trends",
-  "Explore expert tips, case studies, and industry insights on AI, digital marketing, branding, and web development from Horatio, Kerala’s leading agency."
+  "Millionones Blog | AI, Digital Marketing & Web Design Trends",
+  "Explore expert tips, case studies, and industry insights on AI, digital marketing, branding, and web development from Millionones, Kerala’s leading agency."
 );
 export function InsightActions() {
   return (

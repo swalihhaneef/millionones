@@ -33,7 +33,7 @@ const InsightSection = () => {
       <div className="news-insights-grid">
         <div className="top-left-section w-full">
           <div>
-            <Link href="/insights" title="Horatio Insights">
+            <Link href="/insights" title="Millionones Insights">
               <h2>Insights</h2>
 
               <div className="flex gap-2 justify-center items-center">
