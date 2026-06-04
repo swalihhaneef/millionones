@@ -141,7 +141,7 @@ const Footer = ({ show }) => {
               onMouseLeave={handleMouseLeave}
               onMouseMove={handleMouseMove}
             >
-              <img ref={imgRef} src="/images/logo-black.svg" style={{ width: "100%" }} alt="" />
+              <img ref={imgRef} src="/images/new-logo.svg" style={{ width: "100%" }} alt="" />
               {showButton && (
                 <motion.button
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -168,7 +168,7 @@ const Footer = ({ show }) => {
             </div>
             <div className="footer-line mt-5"></div>
             <div className="footer-end flex flex-col md:flex-row justify-between items-center py-10 ">
-              <p className=" text-sm">HORATIO © 2025 All rights reserved</p>
+              <p className=" text-sm">MILLIONONES © 2025 All rights reserved</p>
               <div className='text-center  text-gray text-sm'>
                 <Link href='#' className='hover:text-gray-500'>
                   Privacy Policy

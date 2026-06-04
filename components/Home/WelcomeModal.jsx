@@ -81,7 +81,7 @@ export default function WelcomeModal() {
             <div className="w-full md:w-1/2">
               <div className="p-4 sm:p-6 lg:p-8">
                 <div className="logo py-4">
-                  <img className="logo-img" src="/images/logo-black.svg" alt="" />
+                  <img className="logo-img" src="/images/new-logo.svg" alt="" />
                 </div>
                 <div className="py-4 pb-3 hidden sm:flex">
                   <p className="text-sm ">

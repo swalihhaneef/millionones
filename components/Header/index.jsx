@@ -149,7 +149,7 @@ const Header = () => {
                   <img
                     ref={logoRef}
                     // src="/images/black-logo-copy.jpg"
-                    src="/images/logo-black.svg"
+                    src="/images/new-logo.svg"
                     className="w-[600px] h-[75px] absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2"
                     alt="Logo"
                   />
