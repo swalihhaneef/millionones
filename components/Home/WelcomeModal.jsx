@@ -83,14 +83,14 @@ export default function WelcomeModal() {
                 <div className="logo py-4">
                   <img className="logo-img" src="/images/new-logo.svg" alt="" />
                 </div>
-                <div className="py-4 pb-3 hidden sm:flex">
+                {/* <div className="py-4 pb-3 hidden sm:flex">
                   <p className="text-sm ">
                     Millionones empowered brands through cutting-edge AI,bold marketing,strategy design, and smart development to help them thrive
                     creatively in the digital era
                   </p>
-                </div>
+                </div> */}
                 <div className="pt-2 sm:pt-4">
-                  <h4 className="text-base sm:text-lg pb-4">Ready to thrive creatively? Let's Talk</h4>
+                  {/* <h4 className="text-base sm:text-lg pb-4">Ready to thrive creatively? Let's Talk</h4> */}
                   <form method="post" onSubmit={handleSubmit}>
                     <div className="form">
                       <input
@@ -137,6 +137,9 @@ export default function WelcomeModal() {
                       <button type="submit" className="w-full rounded-lg">
                         Send
                       </button>
+                    </div>
+                    <div className="mt-4">
+                      <h4 className="text-base">Let's Connect and Build Something Great Together</h4>
                     </div>
                   </form>
                 </div>

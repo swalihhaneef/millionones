@@ -16,7 +16,7 @@ const Connect = () => {
             <div className='contact-content '>
               <div className='contact'>
                 <h1 className='mb-7'>
-                  Let’s Thrive <strong>Creatively</strong> together   
+                  Make <strong>Millions</strong> Notice   
                 </h1>
                 <button>
                   Get in Touch

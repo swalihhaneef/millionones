@@ -29,14 +29,14 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.millionones.com/images/og-image.png",
+        url: "https://www.millionones.com/images/og-image1.png",
         width: 1200,
         height: 630,
         alt: "MILLIONONES | Innovative AI & Digital Marketing Company in Kerala",
         type: "image/png",
       },
       {
-        url: "https://www.millionones.com/images/og-image-square.png",
+        url: "https://www.millionones.com/images/og-image-square.jpeg",
         width: 600,
         height: 600,
         alt: "MILLIONONES | Innovative AI & Digital Marketing Company in Kerala",
