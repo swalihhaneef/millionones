@@ -57,7 +57,7 @@ const About = () => {
   return (
     <>
       <section className=" bg-white">
-        <Banner content={"Thrive Creatively"} key={"about"}>
+        <Banner content={"Make Millions Notice"} key={"about"}>
           <p className="mt-20 text-xl/tight md:text-2xl/tight lg:text-3xl/tight">
             As the world evolves and AI takes the spotlight, we embrace its power, blend it with creativity, and walk hand in hand with our clients to
             turn every opportunity into impactful results.
@@ -215,7 +215,7 @@ const About = () => {
               sets brands apart—and that’s where we thrive.
               <br />
               <br />
-              As the founder of Millionones, my vision has always been clear: Thrive Creatively, not just financially. While revenue keeps a business
+              As the founder of Millionones, my vision has always been clear: make millions notice, not just financially. While revenue keeps a business
               running, creativity keeps it alive. We&apos;re here to build brands with purpose, passion, and powerful storytelling backed by the
               latest technology.
               <br />
@@ -225,7 +225,7 @@ const About = () => {
               delivering solutions that are as innovative as they are effective.
               <br />
               <br />
-              <span className="font-semibold">Let’s grow with creativity. Let’s Thrive Creatively.</span>
+              <span className="font-semibold">Let’s grow with creativity. Let’s make millions notice.</span>
             </p>
             <div>
               <p className="font-normal text-lg">Sarath C</p>
