@@ -16,3 +16,11 @@ export const DATABASE_URL = process.env.DATABASE_URL;
 if (!DATABASE_URL) {
   throw new Error("DATABASE_URL must be defined");
 }
+
+export const frontendUrls = [
+  "http://localhost:3000",
+  "https://www.millionones.com",
+  "https://millionones.vercel.app",
+  "https://www.horatio.in",
+  "https://uathoratio.vercel.app"
+]
