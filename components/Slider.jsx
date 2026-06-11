@@ -114,7 +114,7 @@ export default function ScrollZoom({ className = "" }) {
                   className=""
                 >
                   <div className="max-h-screen overflow-hidden">
-                    <VideoPlayer vedio="/vedios/horatio_video-02.mp4" onReady={showVedio} />
+                    <VideoPlayer vedio="/vedios/millionones_video-02.mov" onReady={showVedio} />
                   </div>
                 </motion.div>
 

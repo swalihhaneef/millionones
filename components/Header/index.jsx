@@ -141,7 +141,8 @@ const Header = () => {
               {!showImage ?
                 <div className="vedio-wrapper bg-black">
                   <div className="vedio-container">
-                    <VideoPlayer vedio="/vedios/horatio-lauch-vedio (online-video-cutter.com).mp4" onReady={true}/>
+                    {/* <VideoPlayer vedio="/vedios/horatio-lauch-vedio (online-video-cutter.com).mp4" onReady={true}/> */}
+                     <VideoPlayer vedio="/vedios/millionones-lauch-vedio.mp4" onReady={true}/>
                   </div>
                 </div>
                 : 

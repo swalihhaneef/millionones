@@ -132,7 +132,7 @@ const AISlider = ({ className = "" }) => {
                                     className=""
                                 >
                                     <div className="max-h-screen overflow-hidden">
-                                        <VideoPlayer vedio="/vedios/horatio render_003.mp4" onReady={showVedio}/>
+                                        <VideoPlayer vedio="/vedios/millionones-ai_solutions-vedio2.mov" onReady={showVedio}/>
                                     </div>
                                 </motion.div>
 
