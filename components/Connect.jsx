@@ -5,7 +5,7 @@ import VideoPlayer from './common/VedioPlayer'
 const Connect = () => {
   return (
     <>
-      <div className='slider' style={{padding:0,backgroundColor:"#d0d0d0"}}>
+      <div className='slider' style={{padding:0,backgroundColor:"rgb(208 208 208)"}} >
         <div className='relative w-full h-full'>
           {/* <div className='flex'> */}
             <div className='contact-vedio'>
