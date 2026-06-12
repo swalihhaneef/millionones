@@ -56,7 +56,7 @@ const Header = () => {
 
   // useLenis(true);
 
-   useEffect(() => {
+  useEffect(() => {
     initLenis(); // create once
     return () => destroyLenis();
   }, []);
@@ -145,7 +145,7 @@ const Header = () => {
                      <VideoPlayer vedio="/vedios/millionones-lauch-vedio.mp4" onReady={true}/>
                   </div>
                 </div>
-                : 
+                :
                 <Link href="/">
                   <img
                     ref={logoRef}
@@ -155,7 +155,7 @@ const Header = () => {
                     alt="Logo"
                   />
                 </Link>
-              } 
+              }
             </div>
             {mainHead && (
               <div ref={menuRef} className=" menus">
@@ -173,9 +173,10 @@ const Header = () => {
                 </ul>
               </div>
             )}
-            <button className="header-btn lg:hidden" onClick={toggleSidebar}>
-              <MenuIcon />
-            </button>
+            {showImage &&
+              <button className="header-btn lg:hidden" onClick={toggleSidebar}>
+                <MenuIcon />
+              </button>}
           </div>
         </div>
       </header>
