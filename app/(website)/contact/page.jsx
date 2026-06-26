@@ -25,13 +25,13 @@ const page = () => {
                   <div className="contact-item">
                     <div className="text-16 is-info lh-180">Contact Us :</div>
                     <div className="flex flex-col sm:flex-row gap-4 md:gap-10">
-                      <a href="mailto:mail@horatio.in?subject=Horatio%20Inquiry" className="contact-item-wrap w-inline-block">
+                      <a href="mailto:mail@millionones.in?subject=Millionones%20Inquiry" className="contact-item-wrap w-inline-block">
                         <div className="contact-img-wrap">
                           <img src="/icons/mail-modi.svg" loading="lazy" alt="" />
                         </div>
                         <div className="contact-item-detail">
                           <div className="text-16 medium is-info">Email</div>
-                          <div className="text-16 is-info lh-180">mail@horatio.in</div>
+                          <div className="text-16 is-info lh-180">mail@millionones.in</div>
                         </div>
                       </a>
                       <a href="tel:+919562052148" className="contact-item-wrap w-inline-block">
