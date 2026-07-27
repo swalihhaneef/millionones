@@ -237,7 +237,7 @@ const About = () => {
               src="/images/founder.jpeg"
               // src="https://d33vw3iu5hs0zi.cloudfront.net/media/about_quote_banner_new_26d102fe1d.jpg"
               alt="Petr Valov"
-              className="object-cover w-full h-full rounded-r"
+              className="object-cover w-full h-full rounded-r max-h-[600px]"
             />
           </div>
         </div>
