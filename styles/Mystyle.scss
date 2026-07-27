@@ -174,8 +174,8 @@
 
 .contact-vedio {
   display: none;
-  width: 81%;
-  max-width: 81%;
+  width: 100%;
+  max-width: 100%;
   position: absolute;
 
   @media screen and (min-width: 1080px) {
@@ -184,14 +184,14 @@
     max-width: 100%;
   }
 
-  @media screen and (min-width: 1200px) {
-    width: 90%;
-  }
+  // @media screen and (min-width: 1200px) {
+  //   width: 90%;
+  // }
 
-  @media screen and (min-width: 1332px) {
-    width: 81%;
-    max-width: 81%;
-  }
+  // @media screen and (min-width: 1332px) {
+  //   width: 81%;
+  //   max-width: 81%;
+  // }
 }
 
 .contact-content {

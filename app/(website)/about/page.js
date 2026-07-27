@@ -234,7 +234,7 @@ const About = () => {
           </div>
           <div className="w-full h-full">
             <img
-              src="/images/founder.webp"
+              src="/images/founder.jpeg"
               // src="https://d33vw3iu5hs0zi.cloudfront.net/media/about_quote_banner_new_26d102fe1d.jpg"
               alt="Petr Valov"
               className="object-cover w-full h-full rounded-r"
