@@ -5,21 +5,23 @@ import Connect from "./Connect";
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
+import { useRouter } from "next/navigation";
 
 const Footer = ({ show }) => {
 
   const [showButton, setShowButton] = useState(false);
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const imgRef = useRef(null);
+  const router = useRouter();
 
   const handleMouseEnter = () => {
-    // setShowButton(true);
+    setShowButton(true);
     // Optional GSAP image zoom effect
-    // gsap.to(imgRef.current, {
-    //   scale: 1.05,
-    //   duration: 0.3,
-    //   ease: 'power2.out',
-    // });
+    gsap.to(imgRef.current, {
+      // scale: 1.05,
+      duration: 0.3,
+      ease: 'power2.out',
+    });
   };
 
   const handleMouseLeave = () => {
@@ -35,7 +37,7 @@ const Footer = ({ show }) => {
     let x = e.clientX
     let y = e.clientY
     if (x > 70 && y > 280) {
-      console.log(x, y, 'e')
+      // console.log(x, y, 'e')
     }
     setCoords({ x: x, y: y });
   };
@@ -70,13 +72,13 @@ const Footer = ({ show }) => {
               <div>
                 <h4 className="text-lg font-semibold">What We Offer</h4>
                 <ul className="mt-3 space-y-2 ">
-                   <li className="hover:text-gray-500">
+                  <li className="hover:text-gray-500">
                     <Link href="/ai-solutions">Artificial Intelligence</Link>
                   </li>
                   <li className="hover:text-gray-500">
                     <Link href="/services">Digital Marketing</Link>
                   </li>
-                 
+
                   <li className="hover:text-gray-500">
                     <Link href="/services">Market Identity</Link>
                   </li>
@@ -157,12 +159,14 @@ const Footer = ({ show }) => {
                   }}
 
                 >
-                  <button
+                  <Link
                     className="submit-btn"
-                  // style={{ position: "relative", left: "-75px", top: "-2  5px" }}
+                    style={{ position: "relative", left: "-120px", top: "-35px" }}
+                    // onClick={() => router.push("/contact")}
+                    href="/contact"
                   >
                     Submit Enquiry
-                  </button>
+                  </Link>
                 </motion.button>
               )}
             </div>
