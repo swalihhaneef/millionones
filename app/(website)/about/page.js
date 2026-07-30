@@ -209,8 +209,8 @@ const About = () => {
       <section className="w-full bg-white mt-5">
         <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
           <div className="bg-gray-900 text-white flex flex-col justify-center px-10 py-12">
-            <h2 className="text-2xl mb-6">Founder’s Message</h2>
-            <p className="leading-tight mb-6 text-lg">
+            <h2 className="text-5xl mb-6 font-custom-style">Founder’s Message</h2>
+            <p className="leading-tight mb-6 text-lg font-custom-style">
               At Millionones, we believe that true growth goes beyond just numbers. In an era led by AI and constant digital evolution, creativity is what
               sets brands apart—and that’s where we thrive.
               <br />
@@ -228,8 +228,8 @@ const About = () => {
               <span className="font-semibold">Let’s grow with creativity. Let’s make millions notice.</span>
             </p>
             <div>
-              <p className="font-normal text-lg">Sarath C</p>
-              <p className="text-sm text-gray-300">Creator & Navigator</p>
+              <p className="font-normal text-lg font-custom-style">Sarath C</p>
+              <p className="text-sm text-gray-300 font-custom-style">Creator & Navigator</p>
             </div>
           </div>
           <div className="w-full h-full">
